@@ -3,7 +3,7 @@ import streamlit as st
 import time
 
 
-assistant_id = "asst_DNeNgzYvenkaVCRmSjMG7iMk"
+assistant_id = st.secrets["secrets"]["assistant_id"]
 
 client = openai
 
@@ -15,7 +15,7 @@ if "thread_id" not in st.session_state:
 st.set_page_config(page_title="JobInterviewer", page_icon=":speech_balloon:")
 
 # Add this line
-openai.api_key = "sk-proj-kyrqd778RvhJmmbuvS2cT3BlbkFJ96eXbkW4SDu3QvD0xA1A"
+openai.api_key = st.secrets["secrets"]["openai_api_key"]
 
 if st.sidebar.button("Start Chat"):
     st.session_state.start_chat = True
